@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="func-jquery.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/client.js"></script>
+
+        <title>Funciones JQuery</title>
+
+        <script>
+            $(document).ready(function(){
+                $('#btn-addclass').click(function(){
+                    $('#p-out').addClass('p-red');
+                });
+
+                $('#btn-slidetoggle').click(function(){
+                    $('#hidden-img').slideToggle(667);
+                });
+
+                $('#btn-append').click(function(){
+                    $('#p-out').append($('#hidden-paragraph p'));
+                });
+
+                $('#btn-click').click(function(){
+                    $('#p-out').addClass('p-blue');
+                });
+
+                $('#btn-hide').click(function(){
+                    $('.fixed-output').hide(667);
+                });
+
+                $('#btn-show').click(function(){
+                    $('.fixed-output').show(667);
+                });
+
+                $('#btn-toggle').click(function(){
+                    $('#p-out').toggle(667);
+                });
+
+                $('#btn-slidedown').click(function(){
+                    $('#panel-text').slideDown(667);
+                });
+
+                $('#btn-slideup').click(function(){ 
+                    $('#panel-text').slideUp(667);
+                });
+                
+                $('#btn-fadeout').click(function(){
+                    $('#first-img, #hidden-img').fadeOut(667);
+                });
+
+                $('#btn-fadein').click(function(){
+                    $('#first-img, #hidden-img').fadeIn(667);
+                });
+                
+                $('#btn-before').click(function(){
+                    $('#p-out').before('<h2>Output Panel</h2><hr>');
+                });
+
+                $('#btn-after').click(function(){
+                    $('#p-out').after('<img data-alt-src="https://picsum.photos/215/120" src="https://picsum.photos/220/120">');
+                });
+
+                $('#btn-html').click(function(){
+                    $('[href]').html('<strong><i>This is the .Html() function!<i></strong>');
+                });
+
+                $('#btn-attr').click(function(){
+                    var ruta_actual = $('#first-img').attr('src');
+                    var ruta_alt = $('#first-img').attr('data-alt-src');
+                    $('#first-img').attr('src', ruta_alt);
+                    $('#first-img').attr('data-alt-src', ruta_actual);
+                });
+
+                $('#btn-attr').click(function(){
+                    var ruta_actual2 = $('#hidden-img').attr('src');
+                    var ruta_alt2 = $('#hidden-img').attr('data-alt-src');
+                    $('#hidden-img').attr('src', ruta_alt2);
+                    $('#hidden-img').attr('data-alt-src', ruta_actual2);
+                });
+
+                $('#btn-val').click(function(){
+                    $('input:text').val('R.Guerrero-0071');
+                });
+
+                $('#btn-text').click(function(){
+                    $('h2').text('R.Guerrero-0071');
+                });
+            });
+
+
+
+        </script>
+    </head>
+    <body>
+        <div class="functions">
+            <div class="row">
+                <h1>addClass</h1>
+                <button id="btn-addclass">AddClass</button>
+                <p>Click the button to add class 'red' to that paragraph</p>
+            </div>
+
+            <div class="row">
+                <h1>Slidetoggle</h1>
+                <button id="btn-slidetoggle">SlideToggle</button>
+                <p>Click the button to slideToggle a hidden image</p>
+            </div>
+
+            <div class="row">
+                <h1>Append</h1>
+                <button id="btn-append">Append</button>
+                <p>Click the button to Append a new paragraph!</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">Click</h1>
+                <button id="btn-click">Click</button>
+                <p>Click the button to change<br>the color of those paragraphs</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">Hide</h1>
+                <button id="btn-hide">Hide</button>
+                <p>Click the button to Hide<br>the entire rigth side panel</p>
+            </div>
+
+            <div class="row">
+                <h1>Show</h1>
+                <button id="btn-show">Show</button>
+                <p>Click the button to Show the hidden side panel</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">Toggle</h1>
+                <button id="btn-toggle">Toggle</button>
+                <p>Click the button to alternate <br> the view of those paragraphs</p>
+            </div>
+
+            <div class="row">
+                <h1>SlideDown</h1>
+                <button id="btn-slidedown">SlideDown</button>
+                <p>Click the button to slideDown a hidden panel</p>
+            </div>
+
+            <div class="row">
+                <h1>SlideUp</h1>
+                <button id="btn-slideup">SlideUp</button>
+                <p>Click the button to slideUp a hidden panel</p>
+            </div>
+
+            <div class="row">
+                <h1>FadeOut</h1>
+                <button id="btn-fadeout">FadeOut</button>
+                <p>Click the button to fade-Out those images</p>
+            </div>
+
+            <div class="row">
+                <h1>FadeIn</h1>
+                <button id="btn-fadein">FadeIn</button>
+                <p>Click the button to fade-In those hidden images</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">Before</h1>
+                <button id="btn-before">Before</button>
+                <p>Click the button to insert a<br>cool title of the right side panel</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">After</h1>
+                <button id="btn-after">After</button>
+                <p>Click the button to put a new image<br>after the text</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">Html</h1>
+                <button id='btn-html'>Html</button>
+                <p>Click the button to change the links<br> into text paragraphs</p>
+            </div>
+
+            <div class="row">
+                <h1>Attr</h1>
+                <button id="btn-attr">Attr</button>
+                <p>Click the button to change the images</p>
+            </div>
+
+            <div class="row">
+                <h1 class="h1-less">Val</h1>
+                <button id="btn-val">Val</button>
+                <p class="p-less">Click de button to set a value inside this input-text</p>
+                <input type="text" name="author" size="15">
+            </div>
+
+            <div class="row">
+                <h1>Text</h1>
+                <button id="btn-text">Text</button>
+                <p>Click the button to set the title of the right side panel</p>
+            </div>
+        </div>
+        <div class="fixed-output">
+            <p id="p-out">Lorem ipsum consectetur adipisicingdolor sit, <a href="#">Lorem ipsum. </a>amet  elit. Facilis, eaque atqueullam. Deleniti minus officiis.</p>
+            <br>
+            <hr class="hr-1">   
+            <img id="first-img" data-alt-src="https://picsum.photos/215/140" src="https://picsum.photos/220/140">
+            <hr class="hr-1">
+            <img id="hidden-img" data-alt-src="https://picsum.photos/215/130" src="https://picsum.photos/220/130">
+            <hr class="hr-1">
+            <div id="hidden-paragraph">
+                <p>Loipsum drem olipisic. Sucfom mole <a href="#">Lorem iprum beatsum </a>consectetur ading elit. Nostrum magni reae doloribus esse et non fugit.</p>
+            </div>
+            <div id="panel-text">This is a hidden panel!</div>
+        </div>
+        
+        <br>
+        <br>
+            
+    </body>
+</html>
